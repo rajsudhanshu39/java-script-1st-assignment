@@ -52,9 +52,23 @@ for (let i = 0; i < marks.length; i++) {
     }
 }
 
-// 8. Convert the student's name to uppercase and display the number of characters
+// 8. Convert the student's name to uppercase and get the number of characters
 let upperCaseName = name.toUpperCase();
-let nameCharacterCount = name.length; // Includes spaces, or use name.replace(/\s+/g, "").length if you want only letters
+let nameCharacterCount = name.length; // Includes spaces (or use name.replace(/\s+/g, "").length for letters only)
+
+// Bonus Challenge: Performance grade based on percentage
+function getPerformanceGrade(marksArray) {
+    let percentage = calculatePercentage(marksArray);
+    if (percentage >= 85) {
+        return "Excellent";
+    } else if (percentage >= 70) {
+        return "Good";
+    } else if (percentage >= 50) {
+        return "Average";
+    } else {
+        return "Needs Improvement";
+    }
+}
 
 // 9. Display the final report
 console.log("Student: " + upperCaseName);
@@ -66,3 +80,4 @@ console.log("Highest Marks: " + findHighest(marks));
 console.log("Lowest Marks: " + findLowest(marks));
 console.log("Subjects Passed: " + passedSubjectsCount);
 console.log("Name Character Count: " + nameCharacterCount);
+console.log("Performance: " + getPerformanceGrade(marks));
